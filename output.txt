@@ -1,0 +1,215 @@
+Function: _init @ 00100728
+void _init(void)
+{
+if (PTR___gmon_start___00300fe0 != (undefined *)0x0) {
+__gmon_start__();
+}
+return;
+}
+Function: FUN_00100750 @ 00100750
+void FUN_00100750(void)
+{
+(*(code *)PTR_00301010)();
+return;
+}
+Function: puts @ 00100760
+int puts(char *__s)
+{
+int iVar1;
+iVar1 = (*(code *)PTR_puts_00301018)();
+return iVar1;
+}
+Function: system @ 00100770
+int system(char *__command)
+{
+int iVar1;
+iVar1 = (*(code *)PTR_system_00301020)();
+return iVar1;
+}
+Function: read @ 00100780
+ssize_t read(int __fd,void *__buf,size_t __nbytes)
+{
+ssize_t sVar1;
+sVar1 = (*(code *)PTR_read_00301028)();
+return sVar1;
+}
+Function: __libc_start_main @ 00100790
+void __libc_start_main(void)
+{
+(*(code *)PTR___libc_start_main_00301030)();
+return;
+}
+Function: setvbuf @ 001007a0
+int setvbuf(FILE *__stream,char *__buf,int __modes,size_t __n)
+{
+int iVar1;
+iVar1 = (*_DAT_00301038)();
+return iVar1;
+}
+Function: __gmon_start__ @ 001007b0
+void __gmon_start__(void)
+{
+(*(code *)PTR___gmon_start___00300fe0)();
+return;
+}
+Function: __cxa_finalize @ 001007b8
+void __cxa_finalize(void)
+{
+(*(code *)PTR___cxa_finalize_00300ff8)();
+return;
+}
+Function: _start @ 001007c0
+void processEntry _start(undefined8 param_1,undefined8 param_2)
+{
+undefined auStack_8 [8];
+__libc_start_main(main,param_2,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1,auStack_8)
+;
+do {
+} while( true );
+}
+Function: deregister_tm_clones @ 001007f0
+void deregister_tm_clones(void)
+{
+return;
+}
+Function: register_tm_clones @ 00100830
+void register_tm_clones(void)
+{
+return;
+}
+Function: __do_global_dtors_aux @ 00100880
+void __do_global_dtors_aux(void)
+{
+if (completed_7594 == '\0') {
+if (PTR___cxa_finalize_00300ff8 != (undefined *)0x0) {
+__cxa_finalize(__dso_handle);
+}
+deregister_tm_clones();
+completed_7594 = '\x01';
+}
+return;
+}
+Function: frame_dummy @ 001008c0
+void frame_dummy(void)
+{
+if ((__JCR_END__ != 0) && (PTR__Jv_RegisterClasses_00300fe8 != (undefined *)0x0)) {
+(*(code *)PTR__Jv_RegisterClasses_00300fe8)();
+register_tm_clones();
+return;
+}
+register_tm_clones();
+return;
+}
+Function: func1 @ 001008f0
+void func1(void)
+{
+undefined local_28 [32];
+read(0,local_28,0x40);
+return;
+}
+Function: init @ 00100911
+int init(EVP_PKEY_CTX *ctx)
+{
+int iVar1;
+setvbuf(stdin,(char *)0x0,2,0);
+setvbuf(stdout,(char *)0x0,2,0);
+iVar1 = setvbuf(stderr,(char *)0x0,2,0);
+return iVar1;
+}
+Function: out @ 00100972
+void out(void)
+{
+puts("*****   *   *  *****  ******   ***** ");
+puts("*       *   *  *        *      *     ");
+puts("* ****  *****  *        *      ***** ");
+puts("*   *   *   *  *        *      *     ");
+puts("*****   *   *  *****    *      *     ");
+puts("Hello pwner!");
+return;
+}
+Function: backdoor @ 001009c1
+void backdoor(void)
+{
+system("/bin/sh");
+return;
+}
+Function: main @ 001009d4
+undefined8 main(EVP_PKEY_CTX *param_1)
+{
+init(param_1);
+out();
+func1();
+return 0;
+}
+Function: __libc_csu_init @ 00100a00
+void __libc_csu_init(undefined4 param_1,undefined8 param_2,undefined8 param_3)
+{
+long lVar1;
+_init();
+lVar1 = 0;
+do {
+(*(code *)(&__frame_dummy_init_array_entry)[lVar1])(param_1,param_2,param_3);
+lVar1 = lVar1 + 1;
+} while (lVar1 != 1);
+return;
+}
+Function: __libc_csu_fini @ 00100a70
+void __libc_csu_fini(void)
+{
+return;
+}
+Function: _fini @ 00100a74
+void _fini(void)
+{
+return;
+}
+Function: _ITM_deregisterTMCloneTable @ 00302000
+void _ITM_deregisterTMCloneTable(void)
+{
+halt_baddata();
+}
+Function: puts @ 00302008
+int puts(char *__s)
+{
+halt_baddata();
+}
+Function: system @ 00302010
+int system(char *__command)
+{
+halt_baddata();
+}
+Function: read @ 00302018
+ssize_t read(int __fd,void *__buf,size_t __nbytes)
+{
+halt_baddata();
+}
+Function: __libc_start_main @ 00302020
+void __libc_start_main(void)
+{
+halt_baddata();
+}
+Function: __gmon_start__ @ 00302028
+void __gmon_start__(void)
+{
+halt_baddata();
+}
+Function: setvbuf @ 00302030
+int setvbuf(FILE *__stream,char *__buf,int __modes,size_t __n)
+{
+halt_baddata();
+}
+Function: _Jv_RegisterClasses @ 00302038
+void _Jv_RegisterClasses(void)
+{
+halt_baddata();
+}
+Function: _ITM_registerTMCloneTable @ 00302040
+void _ITM_registerTMCloneTable(void)
+{
+halt_baddata();
+}
+Function: __cxa_finalize @ 00302048
+void __cxa_finalize(void)
+{
+halt_baddata();
+}
